@@ -1,0 +1,42 @@
+{
+	"name": "code-area/laraarea-api",
+	"description": "api crud with login",
+	"keywords": ["laravel", "api"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Codearea"
+		}
+	],
+	"require": {
+		"laravel/framework": "^5.4",
+		"code-area/laraarea-validator": "1.0.*",
+		"code-area/laraarea-transformer": "1.0.*",
+		"code-area/laraarea-model": "1.0.*",
+		"lcobucci/jwt": "3.3.*"
+	},
+	"require-dev": {
+		"mockery/mockery": "~1.0",
+		"phpunit/phpunit": "~6.0"
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"LaraAreaApi\\Providers\\ServiceProvider"
+			]
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"LaraAreaApi\\": "src/"
+		}
+	},
+	"suggest": {
+		"code-area/laraarea-helpers": "Useful functions"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		}
+	}
+}
