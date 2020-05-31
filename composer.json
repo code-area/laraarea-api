@@ -9,15 +9,15 @@
 		}
 	],
 	"require": {
-		"laravel/framework": "^5.4",
-		"code-area/laraarea-validator": "1.0.*",
-		"code-area/laraarea-transformer": "1.0.*",
-		"code-area/laraarea-model": "1.0.*",
+		"laravel/framework": "6.*",
+		"code-area/laraarea-validator": "9.0.*",
+		"code-area/laraarea-transformer": "9.0.*",
+		"code-area/laraarea-model": "9.0.*",
 		"lcobucci/jwt": "3.3.*"
 	},
 	"require-dev": {
-		"mockery/mockery": "~1.0",
-		"phpunit/phpunit": "~6.0"
+		"mockery/mockery": "^1.0",
+		"phpunit/phpunit": "^8.0"
 	},
 	"extra": {
 		"laravel": {
