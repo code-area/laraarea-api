@@ -434,9 +434,9 @@ class ApiBaseAuthService extends ApiBaseService
         }
 
         return [
-            $this->queryParams['username'] => ['required', 'string', Rule::unique('users')], // @TODO dynamic
-            $this->queryParams['password'] => ['required', 'string'],
-            $this->queryParams['password'] . '_confirmation' => ['required', 'string'],
+            $this->queryParams['username'] => ['required', 'string', 'email', 'max:255', 'unique:users'],// @TODO dynamic
+            $this->queryParams['password'] => ['required', 'string', 'min:8', 'confirmed'],
+            $this->queryParams['password'] . '_confirmation' => ['required', 'string', 'min:8'],
         ];
     }
 
