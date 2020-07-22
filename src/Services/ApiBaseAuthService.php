@@ -174,15 +174,25 @@ class ApiBaseAuthService extends ApiBaseService
             Passport::tokensExpireIn(now()->addDays($data[$this->queryParams['remember_days']]));
         }
 
-        $tokenRequest = Request::create('/oauth/token', 'post', [
+        $host = request()->getHost(); // TODO improve
+        $tokenRequest = Request::create(
+            '/oauth/token',
+            'post', [
             'grant_type' => 'password',
             'client_id' => env('O_AUTH_CLIENT_ID'),
             'client_secret' => env('O_AUTH_CLIENT_SECRET'),
             'username' => $data[$this->queryParams['username']],
             'password' => $data[$this->queryParams['password']],
             'scope' => '',
-        ]);
-
+        ],
+            [],
+            [],
+            [
+                'SERVER_NAME' => $host,
+                'HTTP_HOST' => $host,
+            ]
+        );
+        $tokenRequest = clone $tokenRequest;
         $response = app()->handle($tokenRequest);
         $tokens = json_decode((string) $response->getContent(), true);
         if (! key_exists('access_token', $tokens)) {
