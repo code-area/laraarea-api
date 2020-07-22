@@ -52,6 +52,7 @@ return [
         'unknown_error' => 'Unknown error occurred please try again',
         'current_password_is_wrong' => 'Current Password is wrong',
         'token_expired' => 'Token expired',
+        'reset_password' => 'Passwod reseted successfully'
     ],
     'docs' => [
         'all' => '_db',

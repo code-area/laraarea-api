@@ -115,6 +115,7 @@ class BaseAuthController extends BaseController
 
         return $this->response->success([
             'email' => $request->email,
+            'message' => $this->message('reset_password')
         ]);
     }
 
